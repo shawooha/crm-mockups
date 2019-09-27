@@ -1,0 +1,13 @@
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-card {
+    padding: 1rem;
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+}

@@ -6,40 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Client Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
     <div class="container">
         <nav class="navbar">
-        <div class="navbar-brand">
+        
+            <div class="navbar-brand">
             <figure class="image is-48x48">
                     <img class="is-rounded" src="img/user2.jpg">
             </figure>
             <div class="navbar-item">
-                Clair
+                <b>Clair</b>
             </div>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
             </a>
 
-            </div>
-
-
         </div>
+
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">Settings</a>
+                <a class="navbar-item" href="#">Log out</a>
+            </div>
+        </div>
+
         </nav>
     </div>
-
+    <br />
     <div class="container">
         <div class="columns">
             <div class="column">
-                Projects summary
+                <div class="card">
+                    <!-- Last updated projects -->
+                    <div class="card-header"><div class="card-header-title">Project updates</div></div>
+                    <div class="card-content">
+                        <p>
+                            <span class="tag">Today 12:43</span>
+                            <a href="#">Project: Web design of mysite.com</a>
+                        </p>
+                        <p>
+                            <span class="tag">Today 12:43</span>
+                            <a href="#">Project: Web design of mysite.com</a>
+                        </p>
+                        <p>
+                            <span class="tag">Today 12:43</span>
+                            <a href="#">Project: Web design of mysite.com</a>
+                        </p>
+                    </div>
+                </div>
             </div>
+
             <div class="column">
-                System messages
+                <div class="card">
+                    <!-- System messages -->
+                    <div class="card-header"><div class="card-header-title">System Messages</div></div>
+                    <div class="card-content">
+                        <p><span class="tag">30-09-2019</span>
+                            <a href="#">Admin Message: Scheduled Maintenance</a></p>
+                    </div>
+            </div>
+
             </div>
         </div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Check if there are any navbar burgers
+if ($navbarBurgers.length > 0) {
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+}
+
+});
+</script>    
 </body>
 </html>
